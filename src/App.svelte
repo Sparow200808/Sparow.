@@ -27,6 +27,8 @@
       {#await imagePromise}
         Loading...
       {:then result}
+        <!-- coś się nie udało... -->
+        <!-- svelte-ignore a11y-img-redundant-alt -->
         <img width=320 height=320 src={result} alt="Ai generated image"/>
       {:catch}
         Oops! Failes to generate the image
@@ -38,4 +40,19 @@
 
 <style>
     /* Tu znajdzie się kod odpowiadający za wygląd strony */
+main {
+  background-color:#5555;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+input{
+  padding: 4px;
+  border-radius: 1000px;
+  text-align: center;
+}
 </style>
