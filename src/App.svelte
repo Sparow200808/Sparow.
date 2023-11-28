@@ -20,9 +20,13 @@
 </script>
 
 <main>
-    <!-- Tutaj wpisz własny kod układu strony -->
-    <input bind:value={userInput} />
-    <button on:click={generateImage}>Generate</button>
+  <div class="centered">
+    <div>
+      <!-- Tutaj wpisz własny kod układu strony -->
+      <input bind:value={userInput} />
+      <button on:click={generateImage}>Generate</button>
+    </div>
+    <div class="generated-image">
     {#if imagePromise}
       {#await imagePromise}
         Loading...
@@ -36,6 +40,8 @@
     {:else}
       No image generated
     {/if}
+    </div>
+  </div>
 </main>
 
 <style>
@@ -49,10 +55,33 @@ main {
   bottom: 0;
   width: 100%;
   height: 100%;
+
 }
 input{
   padding: 4px;
+  border: solid;
   border-radius: 1000px;
+  text-align: center;
+}
+button{
+  border: solid;
+  border-radius: 1000px;
+  text-align: center;
+}
+button:hover{
+  box-shadow: 0 0 10px black;
+}
+
+.centered{
+  background-color: #5555;
+  padding: 20xp;
+  border: solid;
+  border-width: 8px;
+  border-radius: 30px;
+  box-shadow: 0 0 20xp black;
+}
+.generated-image{
+  color:white;
   text-align: center;
 }
 </style>
